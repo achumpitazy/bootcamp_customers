@@ -23,4 +23,6 @@ public class Person {
 	private String email;
 	@NotEmpty
 	private String telephone;
+	
+	private String typeCustomer;
 }

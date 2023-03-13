@@ -4,8 +4,3 @@ spring:
   data:
     mongodb:
       uri: mongodb://localhost:27017/customers
-management:
-  endpoints:
-    web:
-      exposure:
-        include: info

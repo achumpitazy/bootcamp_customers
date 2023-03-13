@@ -31,7 +31,7 @@ public class CompanyServiceImpl implements CompanyService{
 	@Override
 	public Mono<Company> createCompany(CompanyRequestDto companyRequestDto) {
 		Company company = new Company(null, companyRequestDto.getBusinessName(), companyRequestDto.getRuc(), companyRequestDto.getEmail()
-				, companyRequestDto.getTelephone() , companyRequestDto.getHeadlines(), companyRequestDto.getSignatories());
+				, companyRequestDto.getTelephone() , companyRequestDto.getHeadlines(), companyRequestDto.getSignatories(),"COMPANY");
 		return companyRepository.save(company);
 	}
 
@@ -45,6 +45,7 @@ public class CompanyServiceImpl implements CompanyService{
                 	uCompany.setTelephone(companyRequestDto.getTelephone());
                 	uCompany.setHeadlines(companyRequestDto.getHeadlines());
                 	uCompany.setSignatories(companyRequestDto.getSignatories());
+                	uCompany.setTypeCustomer("COMPANY");
                      return companyRepository.save(uCompany);
         });
 	}

@@ -16,4 +16,5 @@ public class PersonRequestDto {
 	private String email;
 	@NotEmpty
 	private String telephone;
+	private String typeCustomer;
 }

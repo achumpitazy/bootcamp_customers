@@ -31,7 +31,7 @@ public class PersonServiceImpl implements PersonService{
 	@Override
 	public Mono<Person> createPerson(PersonRequestDto personRequestDto) {
 		Person person = new Person(null,personRequestDto.getName(),personRequestDto.getLastName(),personRequestDto.getDni()
-				,personRequestDto.getEmail(),personRequestDto.getTelephone());
+				,personRequestDto.getEmail(),personRequestDto.getTelephone(), "PERSON");
 		return personRepository.save(person);
 	}
 
@@ -44,6 +44,7 @@ public class PersonServiceImpl implements PersonService{
                 	uPerson.setDni(personRequestDto.getDni());
                 	uPerson.setEmail(personRequestDto.getEmail());
                 	uPerson.setTelephone(personRequestDto.getTelephone());
+                	uPerson.setTypeCustomer("PERSON");
                     return personRepository.save(uPerson);
         });
 	}

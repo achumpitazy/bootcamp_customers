@@ -15,6 +15,7 @@ import com.bootcamp.customers.dto.Message;
 import com.bootcamp.customers.entity.Company;
 import com.bootcamp.customers.service.CompanyService;
 
+import jakarta.validation.Valid;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
@@ -36,7 +37,7 @@ public class CompanyController {
     }
 	
 	@PostMapping
-    public Mono<Company> createCompany(@RequestBody CompanyRequestDto companyRequestDto){
+    public Mono<Company> createCompany(@Valid @RequestBody CompanyRequestDto companyRequestDto){
 		return companyService.createCompany(companyRequestDto);
     }
 	

@@ -28,4 +28,5 @@ public class Company {
 	@NotEmpty
 	private List<AuthorizedDto> headlines;
 	private List<AuthorizedDto> signatories;
+	private String typeCustomer;
 }

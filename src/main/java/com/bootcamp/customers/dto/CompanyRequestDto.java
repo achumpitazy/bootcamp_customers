@@ -19,4 +19,5 @@ public class CompanyRequestDto {
 	@NotEmpty
 	private List<AuthorizedDto> headlines;
 	private List<AuthorizedDto> signatories;
+	private String typeCustomer;
 }
