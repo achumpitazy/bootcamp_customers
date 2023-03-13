@@ -11,6 +11,9 @@ import jakarta.validation.constraints.NotEmpty;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
+/**
+ * Clase de entidad para clientes empresariales
+ */
 @Data
 @AllArgsConstructor
 @Document(collection="company")

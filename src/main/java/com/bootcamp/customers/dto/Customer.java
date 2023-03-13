@@ -5,6 +5,9 @@ import com.fasterxml.jackson.annotation.JsonInclude.Include;
 
 import lombok.Data;
 
+/**
+ * Clase de transferencia de datos para los clientes en las consultas
+ */
 @Data
 @JsonInclude(Include.NON_NULL)
 public class Customer {

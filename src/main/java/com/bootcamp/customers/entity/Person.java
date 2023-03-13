@@ -7,6 +7,9 @@ import jakarta.validation.constraints.NotEmpty;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
+/**
+ * Clase de entidad para clientes personales
+ */
 @Data
 @AllArgsConstructor
 @Document(collection="person")

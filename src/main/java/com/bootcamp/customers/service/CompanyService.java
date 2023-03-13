@@ -7,6 +7,9 @@ import com.bootcamp.customers.entity.Company;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
+/**
+ * Clase interfaz de servicio para las clientes empresariales
+ */
 public interface CompanyService {
 
 	Flux<Company> getAll();

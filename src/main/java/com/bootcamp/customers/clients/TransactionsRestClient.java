@@ -10,6 +10,9 @@ import com.bootcamp.customers.dto.Transaction;
 
 import reactor.core.publisher.Flux;
 
+/**
+ * Clase de acceso al microservicio de transacciones
+ */
 @Service
 public class TransactionsRestClient {
     RestConfig restConfig = new RestConfig();

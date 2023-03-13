@@ -12,22 +12,38 @@ import com.bootcamp.customers.service.CompanyService;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
+/**
+ * Clase de implementación para la interfaz CompanyService
+ */
 @Service
 public class CompanyServiceImpl implements CompanyService{
 
 	@Autowired
     private CompanyRepository companyRepository;
-	
+
+	/**
+	 * Método que devuelve todos los clientes de tipo empresarial dentro el repositorio.
+	 * @return Flux<Company>
+	 */
 	@Override
 	public Flux<Company> getAll() {
 		return companyRepository.findAll();
 	}
 
+	/**
+	 * Devuelve todos los clientes de tipo empresarial dentro el repositorio segun el id del cliente.
+	 * @return Mono<Company>
+	 */
 	@Override
 	public Mono<Company> getCompanyById(String companyId) {
 		return companyRepository.findById(companyId);
 	}
 
+	/**
+	 * Crea un cliente de tipo empresarial dentro del repositorio con los datos enviados en el body.
+	 * @param companyRequestDto
+	 * @return Mono<Company>
+	 */
 	@Override
 	public Mono<Company> createCompany(CompanyRequestDto companyRequestDto) {
 		Company company = new Company(null, companyRequestDto.getBusinessName(), companyRequestDto.getRuc(), companyRequestDto.getEmail()
@@ -35,6 +51,11 @@ public class CompanyServiceImpl implements CompanyService{
 		return companyRepository.save(company);
 	}
 
+	/**
+	 * Actualiza un cliente de tipo empresarial dentro del repositorio segun los datos enviados en el body.
+	 * @param companyRequestDto
+	 * @return Mono<Company>
+	 */
 	@Override
 	public Mono<Company> updateCompany(CompanyRequestDto companyRequestDto) {
 		return companyRepository.findById(companyRequestDto.getId())
@@ -50,6 +71,11 @@ public class CompanyServiceImpl implements CompanyService{
         });
 	}
 
+	/**
+	 * Elimina al cliente de tipo empresarial dentro del repositorio segun el id del cliente.
+	 * @param companyId
+	 * @return Mono<Message>
+	 */
 	@Override
 	public Mono<Message> deleteCompany(String companyId) {
 		Message message = new Message("Company does not exist");

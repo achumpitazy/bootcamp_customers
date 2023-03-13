@@ -4,6 +4,9 @@ import java.util.Date;
 
 import lombok.Data;
 
+/**
+ * Clase de transferencia de datos para el microservicio de transacciones
+ */
 @Data
 public class Transaction {
 	private String id;

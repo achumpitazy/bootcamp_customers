@@ -9,6 +9,9 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+/**
+ * Clase de transferencia de datos para los productos de los clientes
+ */
 @Data
 @NoArgsConstructor
 @AllArgsConstructor

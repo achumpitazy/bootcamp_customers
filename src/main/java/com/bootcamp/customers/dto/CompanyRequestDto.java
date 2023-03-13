@@ -5,6 +5,10 @@ import java.util.List;
 import jakarta.validation.constraints.NotEmpty;
 import lombok.Data;
 
+/**
+ * Clase de transferencia de datos para la solicitud
+ * de los clientes empresariales
+ */
 @Data
 public class CompanyRequestDto {
 	private String id;

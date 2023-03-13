@@ -5,6 +5,9 @@ import com.bootcamp.customers.dto.Products;
 
 import reactor.core.publisher.Mono;
 
+/**
+ * Clase interfaz de servicio para las consultas de los clientes
+ */
 public interface ConsultService {
 
 	Mono<Products> productXCustomerIdPerson(String customerId);

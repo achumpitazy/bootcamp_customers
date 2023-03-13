@@ -7,6 +7,9 @@ import com.fasterxml.jackson.annotation.JsonInclude.Include;
 
 import lombok.Data;
 
+/**
+ * Clase de transferencia de datos para el microservicio de tarjetas de credito
+ */
 @Data
 @JsonInclude(Include.NON_NULL)
 public class CreditCard {

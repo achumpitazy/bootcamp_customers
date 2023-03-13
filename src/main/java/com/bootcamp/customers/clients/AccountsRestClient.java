@@ -11,6 +11,9 @@ import com.bootcamp.customers.dto.Account;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
+/**
+ * Clase de acceso al microservicio de clientes
+ */
 @Service
 public class AccountsRestClient {
     RestConfig restConfig = new RestConfig();

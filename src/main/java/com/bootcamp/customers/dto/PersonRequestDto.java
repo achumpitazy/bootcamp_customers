@@ -3,6 +3,10 @@ package com.bootcamp.customers.dto;
 import jakarta.validation.constraints.NotEmpty;
 import lombok.Data;
 
+/**
+ * Clase de transferencia de datos para la solicitud
+ * de los clientes personales
+ */
 @Data
 public class PersonRequestDto {
 	private String id;

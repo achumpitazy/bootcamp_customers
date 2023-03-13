@@ -7,6 +7,9 @@ import com.bootcamp.customers.entity.Person;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
+/**
+ * Clase interfaz de servicio para las clientes personales
+ */
 public interface PersonService {
 
 	Flux<Person> getAll();

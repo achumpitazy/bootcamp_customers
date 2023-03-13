@@ -22,6 +22,9 @@ import com.bootcamp.customers.service.ConsultService;
 
 import reactor.core.publisher.Mono;
 
+/**
+ * Clase de implementación para la interfaz ConsultService
+ */
 @Service
 public class ConsultServiceImpl implements ConsultService{
 
@@ -39,7 +42,12 @@ public class ConsultServiceImpl implements ConsultService{
 	
 	@Autowired
     private CompanyRepository companyRepository;
-	
+
+	/**
+	 * Devuelve la lista de productos de un cliente personal segun el id de cliente.
+	 * @param customerId
+	 * @return Mono<Products>
+	 */
 	@Override
 	public Mono<Products> productXCustomerIdPerson(String customerId) {
         return personRepository.findById(customerId).flatMap(p -> {
@@ -52,6 +60,11 @@ public class ConsultServiceImpl implements ConsultService{
         });
 	}
 
+	/**
+	 * Devuelve la lista de productos de un cliente empresarial segun el id de cliente.
+	 * @param customerId
+	 * @return Mono<Products>
+	 */
 	@Override
 	public Mono<Products> productXCustomerIdCompany(String customerId) {
 		return companyRepository.findById(customerId).flatMap(p -> {
@@ -63,7 +76,13 @@ public class ConsultServiceImpl implements ConsultService{
         	return obtainProducts(customer, customerId);
         });
 	}
-	
+
+	/***
+	 * Obtiene la lista de productos de los clientes
+	 * @param customer
+	 * @param customerId
+	 * @return
+	 */
 	private Mono<Products> obtainProducts(Customer customer, String customerId){
 		List<Account> listAccounts = new ArrayList<>();
         List<Credit> listCredits = new ArrayList<>();
@@ -80,6 +99,11 @@ public class ConsultServiceImpl implements ConsultService{
         });
 	}
 
+	/**
+	 * Muestra la lista de movimientos de una cuenta segun su id.
+	 * @param id
+	 * @return Mono<Movements>
+	 */
 	@Override
 	public Mono<Movements> movementXAccountId(String id) {
 		List<Transaction> listTransaction = new ArrayList<>();
@@ -90,7 +114,12 @@ public class ConsultServiceImpl implements ConsultService{
 			});
 		});	
 	};
-	
+
+	/**
+	 * Muestra la lista de movimientos de un credito segun su id.
+	 * @param id
+	 * @return Mono<Movements>
+	 */
 	@Override
 	public Mono<Movements> movementXCreditId(String id) {
 		List<Transaction> listTransaction = new ArrayList<>();
@@ -101,7 +130,12 @@ public class ConsultServiceImpl implements ConsultService{
 			});
 		});	
 	};
-	
+
+	/**
+	 * Muestra la lista de movimientos de una tarjeta de credito segun su id.
+	 * @param id
+	 * @return Mono<Movements>
+	 */
 	@Override
 	public Mono<Movements> movementXCreditCardId(String id) {
 		List<Transaction> listTransaction = new ArrayList<>();
@@ -112,7 +146,14 @@ public class ConsultServiceImpl implements ConsultService{
 			});
 		});	
 	};
-	
+
+	/**
+	 * Obtiene al cliente segun su tipo(empresarial/personal) y lo convierte en una clase Customer
+	 * @param listTransaction
+	 * @param id
+	 * @param type
+	 * @return Mono<Movements>
+	 */
 	private Mono<Movements> obtainCustomer(List<Transaction> listTransaction, String id, String type){
 		if(type.equals("PERSON")) {
 			return personRepository.findById(id).flatMap(p -> {
