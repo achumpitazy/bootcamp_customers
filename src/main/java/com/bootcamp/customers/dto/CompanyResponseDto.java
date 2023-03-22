@@ -1,15 +1,19 @@
 package com.bootcamp.customers.dto;
 
-import lombok.Getter;
-import lombok.Setter;
+import com.bootcamp.customers.entity.Company;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 /**
  * Clase de transferencia de datos para la respuesta
  * de los clientes empresariales
  */
-@Getter
-@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+@Data
 public class CompanyResponseDto{
-	private CompanyRequestDto companyRequestDto;
-	private Message statusDto;
+	private Company company;
+	private String message;
 }

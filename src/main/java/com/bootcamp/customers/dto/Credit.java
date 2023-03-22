@@ -1,6 +1,6 @@
 package com.bootcamp.customers.dto;
 
-import java.util.Date;
+import java.time.LocalDateTime;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
@@ -19,7 +19,7 @@ public class Credit {
 	private String descripTypeAccount;
 	private Double creditAmount;
 	private Double existingAmount;
-	private Date creditDate;
+	private LocalDateTime creditDate;
 	private String typeCustomer;
 	private Double amount;
 }

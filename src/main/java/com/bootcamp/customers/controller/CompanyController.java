@@ -1,6 +1,7 @@
 package com.bootcamp.customers.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -11,11 +12,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.bootcamp.customers.dto.CompanyRequestDto;
+import com.bootcamp.customers.dto.CompanyResponseDto;
 import com.bootcamp.customers.dto.Message;
 import com.bootcamp.customers.entity.Company;
 import com.bootcamp.customers.service.CompanyService;
 
-import jakarta.validation.Valid;
+import javax.validation.Valid;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
@@ -53,7 +55,7 @@ public class CompanyController {
 	 * @param companyRequestDto
 	 * @return Mono<Company>
 	 */
-	@PostMapping
+	@PostMapping(consumes= MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     public Mono<Company> createCompany(@Valid @RequestBody CompanyRequestDto companyRequestDto){
 		return companyService.createCompany(companyRequestDto);
     }
@@ -63,7 +65,7 @@ public class CompanyController {
 	 * @param companyRequestDto
 	 * @return Mono<Company>
 	 */
-	@PutMapping
+	@PutMapping(consumes= MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
 	public Mono<Company> updateCompany(@RequestBody CompanyRequestDto companyRequestDto){
 		return companyService.updateCompany(companyRequestDto);
     }
@@ -76,6 +78,16 @@ public class CompanyController {
 	@DeleteMapping("/{companyId}")
 	public Mono<Message> deleteCompany(@PathVariable String companyId){
 		return companyService.deleteCompany(companyId);
+    }
+	
+	/**
+	 * Solicitud para cliente PYME
+	 * @param personRequestDto
+	 * @return Mono<Person>
+	 */
+	@PostMapping(value = "/pyme", consumes= MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+    public Mono<CompanyResponseDto> requestProfilePyme(@RequestBody CompanyRequestDto companyRequestDto){
+		return companyService.requestProfilePyme(companyRequestDto);
     }
 	
 }

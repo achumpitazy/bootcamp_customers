@@ -3,7 +3,7 @@ package com.bootcamp.customers.entity;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import jakarta.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotEmpty;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
@@ -28,4 +28,6 @@ public class Person {
 	private String telephone;
 	
 	private String typeCustomer;
+	
+	private String typeProfile;
 }

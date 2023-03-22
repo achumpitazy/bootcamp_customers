@@ -7,7 +7,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 import com.bootcamp.customers.dto.AuthorizedDto;
 
-import jakarta.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotEmpty;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
@@ -32,4 +32,5 @@ public class Company {
 	private List<AuthorizedDto> headlines;
 	private List<AuthorizedDto> signatories;
 	private String typeCustomer;
+	private String typeProfile;
 }

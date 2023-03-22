@@ -1,6 +1,6 @@
 package com.bootcamp.customers.dto;
 
-import jakarta.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotEmpty;
 import lombok.Data;
 
 /**
@@ -21,4 +21,5 @@ public class PersonRequestDto {
 	@NotEmpty
 	private String telephone;
 	private String typeCustomer;
+	private String typeProfile;
 }

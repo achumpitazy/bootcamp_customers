@@ -2,7 +2,7 @@ package com.bootcamp.customers.dto;
 
 import java.util.List;
 
-import jakarta.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotEmpty;
 import lombok.Data;
 
 /**
@@ -24,4 +24,5 @@ public class CompanyRequestDto {
 	private List<AuthorizedDto> headlines;
 	private List<AuthorizedDto> signatories;
 	private String typeCustomer;
+	private String typeProfile;
 }

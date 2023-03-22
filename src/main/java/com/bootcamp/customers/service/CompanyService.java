@@ -1,6 +1,7 @@
 package com.bootcamp.customers.service;
 
 import com.bootcamp.customers.dto.CompanyRequestDto;
+import com.bootcamp.customers.dto.CompanyResponseDto;
 import com.bootcamp.customers.dto.Message;
 import com.bootcamp.customers.entity.Company;
 
@@ -21,5 +22,7 @@ public interface CompanyService {
 	Mono<Company> updateCompany(CompanyRequestDto companyRequestDto);
 
 	Mono<Message> deleteCompany(String companyId);
+	
+	Mono<CompanyResponseDto> requestProfilePyme(CompanyRequestDto companyRequestDto);
 
 }
